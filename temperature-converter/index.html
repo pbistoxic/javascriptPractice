@@ -48,7 +48,7 @@
 
                     <div class="form-group">
                         <input type="button" class="btn btn-primary" value="To Celsius" onclick="toCelsius()">
-                        <input type="button" class="btn btn-primary" value="To Fahrenheit" onclick="toFarenheit()">
+                        <input type="button" class="btn btn-primary" value="To Fahrenheit" onclick="toFahrenheit()">
                     </div>
 
                     <p>Result: <span id="result"></span></p>
@@ -63,9 +63,16 @@
 
         function toCelsius() {
             let celsius = (document.getElementById('userInput').value -32) * 5 / 9;
-            celsius = Math.round(celsius);
+            celsius = celsius.toFixed(1);
 
-            document.getElementById('result').innerHTML = celsius;
+            document.getElementById('result').innerHTML = celsius + " Celsius";
+        }
+
+        function toFahrenheit() {
+            let fahrenheit = document.getElementById('userInput').value * 9 / 5 + 32;
+            fahrenheit = fahrenheit.toFixed(1);
+
+            document.getElementById('result').innerHTML = fahrenheit + " Fahrenheit";
         }
 
     </script>
